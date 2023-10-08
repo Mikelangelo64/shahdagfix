@@ -1,0 +1,48 @@
+-
+  const availabilityList = [
+    {
+      label: '@/assets/img/availability/availability-1.svg',
+      title: 'Simple reservation',
+      description: 'We\'re just a few clicks or a single phone call apart'
+    },
+    {
+      label: '@/assets/img/availability/availability-2.svg',
+      title: 'On-site appraisal',
+      description: 'No obligations. No stress.'
+    },
+    {
+      label: '@/assets/img/availability/availability-3.svg',
+      title: 'Experienced technicians',
+      description: 'All technicians are highly educated and have extensive experience'
+    },
+  ];
+
+section.availability.separate-section
+  ._container
+    .separate-section__wrapper
+      .separate-section__item
+        .availability__bg.glob-bg
+          .glob-bg__item
+
+        .availability__content
+          h2.availability__title We have same-day service availability.
+
+          p.availability__description The most skilled technicians in your local area.<br/>We assure it
+
+          a.button-light.availability__button(href='#') 
+            span Book an appointment for service
+
+      .separate-section__item
+        ul.availability-list
+          each item, index in availabilityList
+            li.availability-list__item
+              .availability-list__label
+                img(
+                  src=require(`${item.label}`),
+                  alt=`availability-${index + 1}`
+                )
+
+              .availability-list__content
+                h3.availability-list__title= item.title
+
+                p.availability-list__description= item.description

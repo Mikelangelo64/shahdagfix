@@ -1,0 +1,30 @@
+section.banner(data-animate='clip-path')
+  ._container.banner__container
+    .banner__wrapper
+      .banner-bg.glob-bg
+        .glob-bg__item
+
+      .banner__content
+        h1.banner__title!= 'Service within 24 hours Home appliance repair'
+
+        p.banner__subtitle!= '$20 OFF FOR NEW CUSTOMERS'
+
+        form.banner__form.form(action='post') 
+          div
+            label(for='banner-problem')
+              input#banner-problem(
+                type='text',
+                name='problem',
+                placeholder='Type what is the problem'
+              ) 
+              span.wpcf7-not-valid-tip Non correct format
+
+            label(for='banner-zip')
+              input#banner-zip(
+                type='number',
+                name='zip',
+                placeholder='Enter Your ZiP code'
+              ) 
+              span.wpcf7-not-valid-tip Non correct format
+
+            button(type='submit') Submit

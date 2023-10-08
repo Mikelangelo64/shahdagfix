@@ -1,0 +1,30 @@
+-
+  const stepsList = [
+    {
+      title: 'Quick and easy online booking',
+      description: 'Effortlessly schedule and personalize your appointment online'
+    },
+    {
+      title: 'Let us know your preferred appointment time',
+      description: 'Choose your desired service day and time, including the possibility of scheduling for the same day.'
+    },
+    {
+      title: 'Sit back and relax while you let us know your preferred arrival time',
+      description: 'Your technician arrives punctually, equipped with the tools, expertise, and knowledge needed for the task.'
+    },
+  ];
+
+section.steps
+  ._container
+    .steps__wrapper
+      h2.steps__title What's the process?
+
+      ul.steps-list
+        each item, index in stepsList
+          li.steps-list__item
+            .steps-list__content
+              .steps-list__count= `0${index + 1}`
+
+              h3.steps-list__title= item.title
+
+              p.steps-list__description= item.description

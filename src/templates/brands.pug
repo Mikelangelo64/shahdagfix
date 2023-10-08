@@ -1,0 +1,44 @@
+-
+  const brandsList = [
+    {
+      image: '@/assets/img/brands/brand-1.png',
+      alt: 'bosh',
+    },
+    {
+      image: '@/assets/img/brands/brand-1.png',
+      alt: 'bosh',
+    },
+    {
+      image: '@/assets/img/brands/brand-1.png',
+      alt: 'bosh',
+    },
+    {
+      image: '@/assets/img/brands/brand-1.png',
+      alt: 'bosh',
+    },
+    {
+      image: '@/assets/img/brands/brand-1.png',
+      alt: 'bosh',
+    },
+    {
+      image: '@/assets/img/brands/brand-1.png',
+      alt: 'bosh',
+    },
+  ];
+
+section.brands
+  ._container
+    .brands__wrapper
+      h2.brands__title Popular brands we work with
+
+      .brands__main
+        .brands-slider.swiper
+          .swiper-wrapper
+            - for (let i=0; i<2; i++)
+              each item in brandsList
+                .swiper-slide
+                  .brands-slider__item
+                    img(src=require(`${item.image}`), alt=`${item.alt}`)
+
+      .brands__footer
+        .brands-slider-pagination

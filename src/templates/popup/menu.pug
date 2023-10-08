@@ -1,0 +1,34 @@
+-
+  const menuPopupList = [
+    {
+      name: 'Main',
+      href: '#',
+    },
+    {
+      name: 'Our pricing',
+      href: '#',
+    },
+    {
+      name: 'Conctact us',
+      href: '#',
+    },
+  ];
+
+.modal-menu__header
+  button.popup__close
+    img(src=require('@/assets/img/popup-close-black.svg'), alt='close')
+
+.modal-menu__main
+  nav.menu
+    ul.menu-list
+      each item in menuPopupList
+        li.menu-list__item
+          a.menu__link(
+            class=`${item.goto !== 'false' ? 'anchor' : ''}`,
+            href=`${item.href}`,
+            data-goto=`${item.goto}`
+          ) #{ item.name }
+
+.modal-menu__footer
+  button.button-dark.popup-open.modal-menu__button(data-popup='_popup-form')
+    span Schedule service

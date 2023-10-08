@@ -1,0 +1,54 @@
+@import '../base';
+
+.separate-section {
+  //.separate-section__wrapper 
+  &__wrapper {
+    width: 100%;
+
+    @include viewport-tablet-min {
+      display: flex;
+      justify-content: cneter;
+    }
+
+    @at-root .separate-section.service-about & {
+      @include viewport-phone {
+        max-width: px-to-rem(408);
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    > * + * {
+      @include viewport-tablet-min {
+        margin-left: px-to-rem(16);
+      }
+      @include viewport-phone {
+        margin-top: px-to-rem(16);
+      }
+    }
+  }
+  
+  //.separate-section__item 
+  &__item {
+    position: relative;
+    z-index: 0;
+
+    display: flex;
+    width: 100%;
+    border-radius: px-to-rem(20);
+    overflow: hidden;
+
+    &:last-child {
+      @include viewport-desktop {
+        max-width: px-to-rem(572);
+      }
+      @include viewport-tablet {
+        max-width: px-to-rem(500);
+      }
+    }
+
+    > * {
+      width: 100%;
+    }
+  }
+}

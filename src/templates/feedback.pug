@@ -1,0 +1,80 @@
+-
+  const feedbackList = [
+    {
+      image: '@/assets/img/feedback/feedback-1.jpg',
+      name: 'Vadim',
+      post: 'Our Technician',
+      raiting: 5,
+      typography: `
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien quam, malesuada ut diam efficitur, commodo pretium velit. Integer consequat quis diam non vulputate. Praesent auctor, enim tincidunt finibus ultrices, nibh leo sollicitudin mi, quis efficitur orci felis vel augue. Sed placerat nibh libero, ut porta tellus lobortis eu. 
+        </p>
+        <p>
+          Proin efficitur erat a posuere gravida. Suspendisse ornare eleifend nunc, vel laoreet libero lacinia elementum. Nam interdum egestas lorem quis lobortis. Proin sit amet bibendum est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque orci ipsum, mollis nec cursus in, imperdiet nec eros.
+        </p>
+      `,
+    },
+    {
+      image: '@/assets/img/feedback/feedback-1.jpg',
+      name: 'Igor',
+      post: 'Our Technician',
+      raiting: 4,
+      typography: `
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien quam, malesuada ut diam efficitur, commodo pretium velit. Integer consequat quis diam non vulputate. Praesent auctor, enim tincidunt finibus ultrices, nibh leo sollicitudin mi, quis efficitur orci felis vel augue. Sed placerat nibh libero, ut porta tellus lobortis eu. 
+        </p>
+        <p>
+          Proin efficitur erat a posuere gravida. Suspendisse ornare eleifend nunc, vel laoreet libero lacinia elementum. Nam interdum egestas lorem quis lobortis. Proin sit amet bibendum est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque orci ipsum, mollis nec cursus in, imperdiet nec eros.
+        </p>
+      `,
+    },
+  ];
+
+section.feedback
+  ._container
+    .feedback__wrapper
+      .feedback__main
+        .feedback-slider.swiper
+          .swiper-wrapper
+            each item, index in feedbackList
+              .swiper-slide
+                .feedback-slider__item
+                  .feedback-slider__header
+                    .feedback-slider__img
+                      .feedback-slider__img__container
+                        img(
+                          src=require(`${item.image}`),
+                          alt=`feedback-${index + 1}`,
+                          loading='lazy'
+                        )
+
+                    .feedback-slider__info
+                      p.feedback-slider__name= item.name
+
+                      p.feedback-slider__post= item.post
+
+                      .feedback-slider-raiting
+                        - for(let i=0; i<5; i++)
+                          .feedback-slider-raiting__item(
+                            class=`${i + 1 <= item.raiting ? 'filled' : 'empty'}`
+                          ) 
+                            if i + 1 <= item.raiting
+                              img(
+                                src=require('@/assets/img/feedback/star.svg'),
+                                alt='star'
+                              )
+                            else
+                              img(
+                                src=require('@/assets/img/feedback/star-empty.svg'),
+                                alt='star'
+                              )
+
+                  .feedback-slider__typography.typography!= item.typography
+
+      .feedback__additional
+        .feedback__glob.glob-bg
+          .glob-bg__item
+
+        h2.feedback__title Get to know some of our top-rated experts
+
+        .feedback-slider-pagination

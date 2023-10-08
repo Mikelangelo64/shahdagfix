@@ -1,0 +1,64 @@
+-
+  const categoriesList = [
+    {
+      href: '#',
+      title: 'Refrigerator',
+    },
+    {
+      href: '#',
+      title: 'Washer',
+    },
+    {
+      href: '#',
+      title: 'Dryer',
+    },
+    {
+      href: '#',
+      title: 'Dishwasher',
+    },
+    {
+      href: '#',
+      title: 'Oven',
+    },
+    {
+      href: '#',
+      title: 'Cooktop',
+    },
+    {
+      href: '#',
+      title: 'Freezer',
+    },
+    {
+      href: '#',
+      title: 'Wine Cooler',
+    },
+    {
+      href: '#',
+      title: 'garbage disposal',
+    },
+    {
+      href: '#',
+      title: 'handyman services',
+    },
+  ];
+
+section.categories
+  ._container
+    .categories__wrapper
+      h2.categories__title What needs to be repaired?
+
+      ul.categories-list
+        each item, index in categoriesList
+          li
+            a.categories-list__item(href=`${item.href}`)
+              span.categories-list__label
+                img.visible(
+                  src=require(`@/assets/img/categories/category-${index + 1}.svg`),
+                  alt=`category-${index + 1}`
+                )
+                img.hover(
+                  src=require(`@/assets/img/categories/category-hover-${index + 1}.svg`),
+                  alt=`category-${index + 1}`
+                )
+
+              span.categories-list__title= item.title
