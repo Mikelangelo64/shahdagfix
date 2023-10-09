@@ -1,3 +1,5 @@
+import footerLinesHelper from './footerLinesHelper/init';
+import globAnimationHandler from './globAnimationHandler/init';
 import initPopups from './popup/init';
 import scrollBarInit from './scrollbar';
 import slidersInit from './sliders/init';
@@ -5,6 +7,8 @@ import slidersInit from './sliders/init';
 export const init = () => {
   scrollBarInit();
   slidersInit();
+  footerLinesHelper();
+  globAnimationHandler();
 
   // const header = document.querySelector('.header') as HTMLElement;
   // // const headerHeight = header ? header.offsetHeight : 0;

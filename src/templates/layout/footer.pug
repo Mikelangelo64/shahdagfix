@@ -2,130 +2,83 @@
   const footerNavigation = [
     [
       {
-        href: './about.html',
-        name: 'Про нас'
+        href: '#',
+        name: 'Our pricing'
       },
       {
-        href: './team.html',
-        name: 'Команда'
+        href: '#',
+        name: 'How it works'
       },
       {
-        href: './partnership.html',
-        name: 'Партнерство'
+        href: '#',
+        name: 'Find the best technician in your area'
       },
-      {
-        href: './pro-bono.html',
-        name: 'Про Боно'
-      },
-      {
-        href: './news.html',
-        name: 'Новини'
-      }
     ],
     [
       {
-        href: './immigration.html',
-        name: 'Імміграція'
+        href: '#',
+        name: 'Contacts'
       },
       {
-        href: './immigration.html',
-        name: 'Легалізація'
+        href: '#',
+        name: 'Privacy Policy'
       },
       {
-        href: './cases.html',
-        name: 'Імміграційні кейси'
-      }
+        href: '#',
+        name: 'Terms and Conditions'
+      },
     ],
-    [
-      {
-        href: './recruting.html',
-        name: 'Рекрутинг'
-      },
-      {
-        href: './recruting.html',
-        name: 'Адаптація'
-      },
-      {
-        href: './cases.html',
-        name: 'Рекрутингові кейси'
-      },
-      {
-        href: './partnership.html',
-        name: 'Наші партнери'
-      }
-    ],
-    [
-      {
-        href: './info-for.html',
-        name: 'Для урядів'
-      },
-      {
-        href: './info-for.html',
-        name: 'Для місцевої влади'
-      },
-      {
-        href: './info-for.html',
-        name: 'Для донорів і NGO'
-      },
-      {
-        href: './info-for.html',
-        name: 'Для банків і фінтеху'
-      },
-      {
-        href: './info-for.html',
-        name: 'Для компаній'
-      },
-      {
-        href: './info-for.html',
-        name: 'Для мігрантів'
-      }
-    ],
-  ];
-
-  const footerLinks = [
-    {
-      href: './document.html',
-      name: 'Terms of Use'
-    },
-    {
-      href: './document.html',
-      name: 'Privacy Policy'
-    },
-    {
-      href: './document.html',
-      name: 'Cookie Policy'
-    },
-    {
-      href: './document.html',
-      name: 'Disclaimer'
-    }
   ];
 
 footer.footer
-  ._container.footer__container
+  ._container
     .footer__wrapper
-      nav.footer-navigation
-        ul.footer-navigation__list
-          each column in footerNavigation
-            li.footer-navigation__li
-              ul.footer-navigation__col
-                each item in column
-                  li.footer-navigation__row
-                    a.footer-navigation__item(href=`${item.href}`)= item.name
+      .footer-main
+        .footer-main__item
+          p.footer-main__title Contacts
+
+          ul.footer-contacts
+            li
+              a.footer-contacts__item(href='tel:+4917656953558')
+                span.footer-contacts__label
+                  img(
+                    src=require('@/assets/img/contacts/telephone.svg'),
+                    alt='telephone'
+                  )
+
+                span.footer-contacts__text +49 176 56953558
+
+            li
+              a.footer-contacts__item(href='mailto:example@gmail.com')
+                span.footer-contacts__label
+                  img(
+                    src=require('@/assets/img/contacts/mail.svg'),
+                    alt='mail'
+                  )
+
+                span.footer-contacts__text example@gmail.com
+
+        .footer-main__item
+          p.footer-main__title Menu
+
+          nav.footer-navigation
+            ul.footer-navigation__list
+              each column in footerNavigation
+                li.footer-navigation__li
+                  ul.footer-navigation__col
+                    each item in column
+                      li.footer-navigation__row
+                        a.footer-navigation__item(href=`${item.href}`)= item.name
+
+        .footer-main__item
+          p.footer-main__title Recording
+
+          a.button-light.footer-main__button(href='#')
+            span Book an appointment for service
 
       .footer-bottom
         .footer-bottom__item
-          p.footer__copyright © 2023 Persona Patman LLC&nbsp&nbsp|&nbsp&nbspAll Rights Reserved
-
-        .footer-bottom__item
-          ul.footer-bottom__list
-            each item in footerLinks
-              li.footer-bottom__list__li
-                a.footer-bottom___link(
-                  href=`${item.href}`,
-                  target='_blank',
-                  rel='noreferrer'
-                )= item.name
+          p.footer__copyright © 2023 Copyright 2023 SHAHDAGFIX. All Rights Reserved.
 
         .footer-bottom__item
           a.develop(
@@ -133,7 +86,7 @@ footer.footer
             target='_blank',
             rel='noreferrer'
           )
-            span.develop__text Розробка сайту
+            span.develop__text Developed By
 
             span.develop__img
               img(src=require('@/assets/img/impulse.svg'), alt='impulse')
