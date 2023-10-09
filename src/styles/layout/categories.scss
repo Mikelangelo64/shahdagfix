@@ -90,7 +90,7 @@
         border-radius: inherit;
 
         @include transition(transform 0.6s);
-        transform: translate(0, 100%);
+        transform: translate(0, 110%);
         background-color: var(--color-blue);
 
         @at-root .categories-list__item:hover::before {

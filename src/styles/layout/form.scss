@@ -59,7 +59,7 @@ textarea {
     font-size: inherit;
     font-weight: inherit;
     line-height: inherit;
-    color: rgba(var(--color-black--rgb), 0.3);
+    color: rgba(var(--color-black--rgb), 0.8);
   }
 
   &.hidden {
@@ -86,7 +86,7 @@ textarea {
     border: unset;
     border-radius: 0;
 
-    font-size: px-to-rem(12);
+    font-size: px-to-rem(14);
 
     @include viewport-tablet-min {
       padding: px-to-rem(16) px-to-rem(18);

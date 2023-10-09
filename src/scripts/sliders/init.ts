@@ -29,7 +29,7 @@ const sliderBrandsInit = (sliders: Array<IInitializedSlider>) => {
         allowTouchMove: true,
         slidesPerView: 1,
         slidesPerGroup: 1,
-        spaceBetween: 12,
+        spaceBetween: 40,
         loop: true,
 
         breakpoints: {
