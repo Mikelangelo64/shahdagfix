@@ -6,12 +6,12 @@
     //-   video: '@/assets/video/banner.mp4',
     //- }, 
     { 
-      name: 'header-modal', 
-      type: 'header-modal', 
+      name: 'pricing', 
+      type: 'pricing', 
       video: '',
       title: '',
       subtitle: '',
-      isFullscreenPhone: 'false'
+      isFullscreenPhone: 'true'
     }, 
     { 
       name: 'menu', 
@@ -59,9 +59,7 @@ each item in popupList
 
     .popup__scroll
       .popup__wrapper
-        button.popup__close(
-          class=`${item.type === 'menu' || item.type === 'header-modal' ? 'hidden' : ''}`
-        )
+        button.popup__close(class=`${item.type === 'menu' ? 'hidden' : ''}`)
           img(
             class=`${item.isFullscreenPhone === 'true' ? 'desktop' : ''}`,
             src=require('@/assets/img/popup-close.svg'),
@@ -89,18 +87,18 @@ each item in popupList
             when 'menu'
               include @/templates/popup/menu.pug
 
-            when 'header-modal'
-              include @/templates/popup/header-modal.pug
+            when 'pricing'
+              include @/templates/popup/pricing-popup.pug
 
             when 'feedback'
               if item.name === 'thanks'
-                //- include @/templates/popup/thanks-popup.pug
+                include @/templates/popup/thanks-popup.pug
 
               if item.name === 'error'
-                //- include @/templates/popup/error-popup.pug
+                include @/templates/popup/error-popup.pug
 
             when 'form'
-              //- include @/templates/popup/form-popup.pug
+              include @/templates/popup/form-popup.pug
 
             default
               include @/templates/popup/content-popup.pug

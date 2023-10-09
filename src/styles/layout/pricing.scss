@@ -1,0 +1,232 @@
+@import '../base';
+
+.pricing {
+  //.pricing__wrapper 
+  &__wrapper {
+    width: 100%;
+
+    > * + * {
+      margin-top: px-to-rem(32);
+    }
+  }
+  
+  //.pricing__title 
+  &__title {
+    @include text-heading-2;
+    text-align: center;
+  }
+  
+  //.pricing__main 
+  &__main {
+    > * + * {
+      margin-top: px-to-rem(24);
+    }
+  }
+
+  //.pricing__footer 
+  &__footer {
+    display: flex;
+    justify-content: center;
+  }
+
+  //.pricing__link 
+  // &__link {
+
+  // }
+  
+  //.pricing__navigation 
+  &__navigation {
+    width: 100%;
+    @include hide-scroll-bars;
+
+    @include mobile-device {
+      overflow-y: visible;
+      overflow-x: auto;
+    }
+
+    @include viewport-phone {
+      width: calc(100% + 2 * var(--wrap));
+      margin-left: calc(-1 * var(--wrap));
+    }
+    
+    //.pricing__navigation__inner 
+    &__inner {
+      display: flex;
+
+      @include mobile-device {
+        align-items: center;
+        width: max-content;
+      }
+
+      @include non-mobile-device {
+        // display: grid;
+        // grid-template-columns: repeat(auto-fill, minmax(#{px-to-rem(120)}, 1fr));
+        
+        // @include viewport-desktop {
+        //   gap: px-to-rem(20) px-to-rem(58);
+        // }
+        // @include viewport-tablet {
+        //   gap: px-to-rem(12) px-to-rem(20);
+        // }
+        // @include viewport-phone {
+        //   gap: px-to-rem(10) px-to-rem(16);
+        // }
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      @include viewport-tablet-min {
+        padding-left: px-to-rem(18);
+        padding-right: px-to-rem(18);
+      }
+
+      @include viewport-phone {
+        padding-left: var(--wrap);
+        padding-right: var(--wrap);
+      }
+
+      > * {
+        @include non-mobile-device {
+          @include viewport-desktop {
+            margin: px-to-rem(8) px-to-rem(26);
+          }
+          @include viewport-tablet {
+            margin: px-to-rem(8) px-to-rem(10);
+          }
+          @include viewport-phone {
+            margin: px-to-rem(8) px-to-rem(8);
+          }
+        }
+
+        + * {
+          @include mobile-device {
+            @include viewport-desktop {
+              margin-left: px-to-rem(58);
+            }
+            @include viewport-tablet {
+              margin-left: px-to-rem(38);
+            }
+            @include viewport-phone {
+              margin-left: px-to-rem(20);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  //.pricing__button 
+  &__button {
+    @include reset-button;
+    position: relative;
+    z-index: 0;
+
+    display: block;
+    width: 100%;
+    padding-bottom: px-to-rem(8);
+    
+    @include transition(color 0.4s);
+    text-align: left;
+    font-weight: 700;
+    line-height: 116%;
+    font-size: px-to-rem(18);
+
+    color: rgba(var(--color-black--rgb), 0.62);
+
+    &.active {
+      color: var(--color-blue);
+    }
+
+    span {
+      // position: relative;
+      // z-index: 0;
+      // display: inline-block;
+
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      width: 100%;
+      height: 1px;
+
+      @include transition(background 0.4s);
+      background-color: rgba(var(--color-black--rgb), 0.21);
+    
+      @at-root .pricing__button.active::before {
+        background-color: var(--color-blue);
+      }
+    }
+  }
+  
+  //.pricing__content 
+  // &__content {
+  // }
+  
+  //.pricing-list 
+  &-list {
+    > * + * {
+      margin-top: px-to-rem(14);
+    }
+
+    //.pricing-list__item 
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      width: 100%;
+      border-radius: px-to-rem(10);
+      
+      background-color: var(--color-white);
+      
+      @include viewport-tablet-min {
+        padding: px-to-rem(20);
+      }
+      @include viewport-phone {
+        padding: px-to-rem(16) px-to-rem(10);
+      }
+
+      > * + * {
+        margin-left: px-to-rem(30);
+      }
+    }
+
+    //.pricing-list__content 
+    &__content {
+      display: flex;
+      align-items: center;
+
+      font-weight: 600;
+      line-height: 116%;
+      color: var(--color-black);
+
+      @include viewport-tablet-min {
+        font-size: px-to-rem(18);
+      }
+
+      @include viewport-phone {
+        font-size: px-to-rem(16);
+      }
+
+      > * + * {
+        margin-left: px-to-rem(10);
+      }
+    }
+  
+    //.pricing-list__subtitle 
+    &__subtitle {
+      font-weight: 300;
+      color: rgba(var(--color-black--rgb), 0.52);
+    }
+  
+    //.pricing-list__value 
+    // &__value {
+    // }
+  }
+}
+

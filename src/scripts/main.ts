@@ -1,3 +1,4 @@
+import fadeContentInit from './fadeContent/init';
 import footerLinesHelper from './footerLinesHelper/init';
 import globAnimationHandler from './globAnimationHandler/init';
 import initPopups from './popup/init';
@@ -9,6 +10,7 @@ export const init = () => {
   slidersInit();
   footerLinesHelper();
   globAnimationHandler();
+  fadeContentInit();
 
   // const header = document.querySelector('.header') as HTMLElement;
   // // const headerHeight = header ? header.offsetHeight : 0;

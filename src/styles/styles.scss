@@ -94,6 +94,16 @@ ol {
 
 .button-light {
   @include button-light;
+
+  @include hover-focus-visible {
+    @include non-mobile-device {
+      color: var(--color-white);
+    }
+  }
+
+  &::before {
+    background-color: var(--color-black);
+  }
 }
 
 section,
@@ -108,6 +118,48 @@ section,
   }
   @include viewport-phone {
     padding: px-to-rem(40) 0;
+  }
+}
+
+.popup-feedback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  > * + * {
+    margin-top: px-to-rem(20);
+  }
+
+  //.popup-feedback__label 
+  &__label {
+    width: 100%;
+    margin-bottom: px-to-rem(20);
+
+    @include viewport-tablet-min {
+      max-width: px-to-rem(100);
+    }
+    @include viewport-phone {
+      max-width: px-to-rem(80);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  //.popup-feedback__title 
+  &__title {
+    @include text-heading-2;
+    color: var(--color-blue);
+  }
+
+  //.popup-feedback__subtitle 
+  &__subtitle {
+    font-weight: 500;
+    line-height: 122%;
+    font-size: px-to-rem(20);
   }
 }
 
@@ -225,6 +277,8 @@ section,
 @import './layout/feedback';
 @import './layout/steps';
 @import './layout/service-about';
+@import './layout/fade-section';
+@import './layout/pricing';
 @import './layout/typography';
 
 

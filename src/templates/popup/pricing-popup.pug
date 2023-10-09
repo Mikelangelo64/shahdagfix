@@ -1,0 +1,303 @@
+-
+  const pricingArray = [
+    {
+      isActive: 'true',
+      data: '1',
+      type: 'Category 1',
+
+      list: [
+        {
+          title: 'Drywall repair',
+          price: '$69.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+        {
+          title: 'Inspection',
+          price: '$75.00'
+        },
+        {
+          title: 'Drywall repair',
+          price: '$69.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+        {
+          title: 'Inspection',
+          price: '$75.00'
+        },
+      ]
+    },
+    {
+      isActive: 'false',
+      data: '2',
+      type: 'Category 2',
+
+      list: [
+        {
+          title: 'Drywall repair',
+          price: '$69.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+      ]
+    },
+    {
+      isActive: 'false',
+      data: '4',
+      type: 'Category 2',
+
+      list: [
+        {
+          title: 'Drywall repair',
+          price: '$69.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+      ]
+    },
+    {
+      isActive: 'false',
+      data: '3',
+      type: 'Category 3',
+
+      list: [
+        {
+          title: 'Drywall repair',
+          price: '$69.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+        {
+          title: 'Drywall repair',
+          price: '$69.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+        {
+          title: 'Drywall repair',
+          price: '$69.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+      ]
+    },
+    {
+      isActive: 'false',
+      data: '4',
+      type: 'Category 4',
+
+      list: [
+        {
+          title: 'Drywall repair',
+          price: '$69.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+      ]
+    },
+    {
+      isActive: 'false',
+      data: '5',
+      type: 'Category 5',
+
+      list: [
+        {
+          title: 'Drywall repair',
+          price: '$69.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+        {
+          title: 'Drywall repair',
+          price: '$69.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+        {
+          title: 'Drywall repair',
+          price: '$69.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+        {
+          title: 'Drywall repair',
+          price: '$69.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+      ]
+    },
+    {
+      isActive: 'false',
+      data: '6',
+      type: 'Category 6',
+
+      list: [
+        {
+          title: 'Drywall repair',
+          price: '$69.00'
+        },
+      ]
+    },
+    {
+      isActive: 'false',
+      data: '7',
+      type: 'Category 7',
+
+      list: [
+        {
+          title: 'Drywall repair',
+          price: '$69.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+      ]
+    },
+    {
+      isActive: 'false',
+      data: '8',
+      type: 'Category 8',
+
+      list: [
+        {
+          title: 'Drywall repair',
+          price: '$69.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+      ]
+    },
+    {
+      isActive: 'false',
+      data: '9',
+      type: 'Category 9',
+
+      list: [
+        {
+          title: 'Drywall repair',
+          price: '$69.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+      ]
+    },
+    {
+      isActive: 'false',
+      data: '10',
+      type: 'Category 10',
+
+      list: [
+        {
+          title: 'Drywall repair',
+          price: '$69.00'
+        },
+        {
+          title: 'Drywall repair',
+          price: '$69.00'
+        },
+        {
+          title: 'Drywall repair',
+          price: '$69.00'
+        },
+        {
+          title: 'Drywall repair',
+          price: '$69.00'
+        },
+        {
+          title: 'Appliance repair',
+          price: '$75.00'
+        },
+      ]
+    },
+  ];
+
+.pricing
+  .pricing__wrapper
+    p.pricing__title Services pricing
+
+    .pricing__main.fade-section
+      .fade-section__list.pricing__navigation
+        ul.pricing__navigation__inner
+          each item in pricingArray
+            li
+              button.fade-section__button.pricing__button(
+                class=`${item.isActive === 'true' ? 'active' : ''}`,
+                data-item=`${item.data}`,
+                aria-label=`${item.type.title}`
+              )
+                span= item.type
+
+      .pricing__content
+        .fade-section-content
+          each item in pricingArray
+            .fade-section-content__item(
+              class=`${item.isActive !== 'true' ? 'unactive' : ''}`,
+              data-item=`${item.data}`
+            )
+              ul.pricing-list
+                each service in item.list 
+                  li.pricing-list__item
+                    p.pricing-list__content= service.title
+
+                    .pricing-list__content
+                      p.pricing-list__subtitle Starting at
+                      p.pricing-list__value= service.price
+
+    .pricing__footer
+      a.button-light.pricing__link(href='#')
+        span Book an appointment
