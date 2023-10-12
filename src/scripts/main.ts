@@ -1,3 +1,4 @@
+import anchorsInit from './anchor/init';
 import fadeContentInit from './fadeContent/init';
 import footerLinesHelper from './footerLinesHelper/init';
 import globAnimationHandler from './globAnimationHandler/init';
@@ -40,6 +41,8 @@ export const init = () => {
   // }
 
   const popups = initPopups();
+
+  anchorsInit(0, popups);
 
   const formArr = document.querySelectorAll('form');
   const hasError = false;

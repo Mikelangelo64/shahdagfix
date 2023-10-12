@@ -3,14 +3,20 @@
     {
       name: 'Main',
       href: '#',
+      isOpenPopup: 'false',
+      goto: 'false'
     },
     {
       name: 'Our pricing',
       href: '#',
+      isOpenPopup: '_popup-pricing',
+      goto: 'false'
     },
     {
       name: 'Conctact us',
       href: '#',
+      isOpenPopup: 'false',
+      goto: '.footer'
     },
   ];
 
@@ -23,11 +29,14 @@
     ul.menu-list
       each item in menuPopupList
         li.menu-list__item
-          a.menu__link(
-            class=`${item.goto !== 'false' ? 'anchor' : ''}`,
-            href=`${item.href}`,
-            data-goto=`${item.goto}`
-          ) #{ item.name }
+          if item.isOpenPopup === 'false'
+            a.menu__link(
+              class=`${item.goto !== 'false' ? 'anchor' : ''}`,
+              href=`${item.href}`,
+              data-goto=`${item.goto}`
+            ) #{ item.name }
+          else
+            button.menu__link.popup-open(data-popup=`${item.isOpenPopup}`) #{ item.name }
 
 .modal-menu__footer
   button.button-dark.popup-open.modal-menu__button(data-popup='_popup-pricing')

@@ -3,14 +3,20 @@
     {
       name: 'Main',
       href: '#',
+      isOpenPopup: 'false',
+      goto: 'false'
     },
     {
       name: 'Our pricing',
       href: '#',
+      isOpenPopup: '_popup-pricing',
+      goto: 'false'
     },
     {
       name: 'Conctact us',
       href: '#',
+      isOpenPopup: 'false',
+      goto: '.footer'
     },
   ];
 
@@ -29,7 +35,14 @@ header.header
         ul.menu-list
           each item in menuList
             li.menu-list__item
-              a.menu__link(href=`${item.href}`) #{ item.name }
+              if item.isOpenPopup === 'false'
+                a.menu__link(
+                  class=`${item.goto !== 'false' ? 'anchor' : ''}`,
+                  href=`${item.href}`,
+                  data-goto=`${item.goto}`
+                ) #{ item.name }
+              else
+                button.menu__link.popup-open(data-popup=`${item.isOpenPopup}`) #{ item.name }
 
       .header__buttons
         a.header__call(href='tel:+380930558669')

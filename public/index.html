@@ -14,9 +14,10 @@
               alt="logo" draggable="false"></a>
           <nav class="menu header__menu">
             <ul class="menu-list">
-              <li class="menu-list__item"><a class="menu__link" href="#">Main</a></li>
-              <li class="menu-list__item"><a class="menu__link" href="#">Our pricing</a></li>
-              <li class="menu-list__item"><a class="menu__link" href="#">Conctact us</a></li>
+              <li class="menu-list__item"><a class="menu__link" href="#" data-goto="false">Main</a></li>
+              <li class="menu-list__item"><button class="menu__link popup-open" data-popup="_popup-pricing">Our
+                  pricing</button></li>
+              <li class="menu-list__item"><a class="menu__link anchor" href="#" data-goto=".footer">Conctact us</a></li>
             </ul>
           </nav>
           <div class="header__buttons"><a class="header__call" href="tel:+380930558669"><svg
@@ -444,11 +445,10 @@
               <div class="modal-menu__main">
                 <nav class="menu">
                   <ul class="menu-list">
-                    <li class="menu-list__item"><a class="menu__link anchor" href="#" data-goto="undefined">Main</a>
-                    </li>
-                    <li class="menu-list__item"><a class="menu__link anchor" href="#" data-goto="undefined">Our
-                        pricing</a></li>
-                    <li class="menu-list__item"><a class="menu__link anchor" href="#" data-goto="undefined">Conctact
+                    <li class="menu-list__item"><a class="menu__link" href="#" data-goto="false">Main</a></li>
+                    <li class="menu-list__item"><button class="menu__link popup-open" data-popup="_popup-pricing">Our
+                        pricing</button></li>
+                    <li class="menu-list__item"><a class="menu__link anchor" href="#" data-goto=".footer">Conctact
                         us</a></li>
                   </ul>
                 </nav>
@@ -750,11 +750,11 @@
                   <div class="feedback-slider__item">
                     <div class="feedback-slider__header">
                       <div class="feedback-slider__img">
-                        <div class="feedback-slider__img__container"><img src="assets/img/feedback/feedback-1.jpg"
+                        <div class="feedback-slider__img__container"><img src="assets/img/feedback/feedback-2.jpg"
                             alt="feedback-2" loading="lazy"></div>
                       </div>
                       <div class="feedback-slider__info">
-                        <p class="feedback-slider__name">Gasym</p>
+                        <p class="feedback-slider__name">Shokhrat</p>
                         <p class="feedback-slider__post">Our Technician</p>
                         <div class="feedback-slider-raiting">
                           <div class="feedback-slider-raiting__item filled"> <img src="assets/img/feedback/star.svg"
@@ -765,8 +765,8 @@
                               alt="star"></div>
                           <div class="feedback-slider-raiting__item filled"> <img src="assets/img/feedback/star.svg"
                               alt="star"></div>
-                          <div class="feedback-slider-raiting__item empty"> <img
-                              src="assets/img/feedback/star-empty.svg" alt="star"></div>
+                          <div class="feedback-slider-raiting__item filled"> <img src="assets/img/feedback/star.svg"
+                              alt="star"></div>
                         </div>
                       </div>
                     </div>
@@ -873,21 +873,22 @@
                 <ul class="footer-navigation__list">
                   <li class="footer-navigation__li">
                     <ul class="footer-navigation__col">
-                      <li class="footer-navigation__row"><a class="footer-navigation__item" href="#">Our pricing</a>
-                      </li>
-                      <li class="footer-navigation__row"><a class="footer-navigation__item" href="#">How it works</a>
-                      </li>
-                      <li class="footer-navigation__row"><a class="footer-navigation__item" href="#">Find the best
-                          technician in your area</a></li>
+                      <li class="footer-navigation__row"><button class="footer-navigation__item popup-open"
+                          data-popup="_popup-pricing">Our pricing</button></li>
+                      <li class="footer-navigation__row"><a class="footer-navigation__item anchor" href="#"
+                          data-goto=".steps">How it works</a></li>
+                      <li class="footer-navigation__row"><a class="footer-navigation__item anchor" href="#"
+                          data-goto=".feedback">Find the best technician in your area</a></li>
                     </ul>
                   </li>
                   <li class="footer-navigation__li">
                     <ul class="footer-navigation__col">
-                      <li class="footer-navigation__row"><a class="footer-navigation__item" href="#">Contacts</a></li>
-                      <li class="footer-navigation__row"><a class="footer-navigation__item" href="#">Privacy Policy</a>
-                      </li>
-                      <li class="footer-navigation__row"><a class="footer-navigation__item" href="#">Terms and
-                          Conditions</a></li>
+                      <li class="footer-navigation__row"><a class="footer-navigation__item anchor" href="#"
+                          data-goto=".footer">Contacts</a></li>
+                      <li class="footer-navigation__row"><a class="footer-navigation__item" href="#"
+                          data-goto="false">Privacy Policy</a></li>
+                      <li class="footer-navigation__row"><a class="footer-navigation__item" href="#"
+                          data-goto="false">Terms and Conditions</a></li>
                     </ul>
                   </li>
                 </ul>

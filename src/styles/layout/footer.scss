@@ -225,6 +225,7 @@
     
     //.footer-navigation__item 
     &__item {
+      @include reset-button;
       position: relative;
       z-index: 0;
 

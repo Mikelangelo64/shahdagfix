@@ -3,29 +3,41 @@
     [
       {
         href: '#',
-        name: 'Our pricing'
+        name: 'Our pricing',
+        isOpenPopup: '_popup-pricing',
+        goto: 'false'
       },
       {
         href: '#',
-        name: 'How it works'
+        name: 'How it works',
+        isOpenPopup: 'false',
+        goto: '.steps'
       },
       {
         href: '#',
-        name: 'Find the best technician in your area'
+        name: 'Find the best technician in your area',
+        isOpenPopup: 'false',
+        goto: '.feedback'
       },
     ],
     [
       {
         href: '#',
-        name: 'Contacts'
+        name: 'Contacts',
+        isOpenPopup: 'false',
+        goto: '.footer'
       },
       {
         href: '#',
-        name: 'Privacy Policy'
+        name: 'Privacy Policy',
+        isOpenPopup: 'false',
+        goto: 'false'
       },
       {
         href: '#',
-        name: 'Terms and Conditions'
+        name: 'Terms and Conditions',
+        isOpenPopup: 'false',
+        goto: 'false'
       },
     ],
   ];
@@ -68,7 +80,16 @@ footer.footer
                   ul.footer-navigation__col
                     each item in column
                       li.footer-navigation__row
-                        a.footer-navigation__item(href=`${item.href}`)= item.name
+                        if item.isOpenPopup === 'false'
+                          a.footer-navigation__item(
+                            class=`${item.goto !== 'false' ? 'anchor' : ''}`,
+                            href=`${item.href}`,
+                            data-goto=`${item.goto}`
+                          ) #{ item.name }
+                        else
+                          button.footer-navigation__item.popup-open(
+                            data-popup=`${item.isOpenPopup}`
+                          ) #{ item.name }
 
         .footer-main__item
           p.footer-main__title Recording
