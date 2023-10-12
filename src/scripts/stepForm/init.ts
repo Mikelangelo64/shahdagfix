@@ -1,7 +1,10 @@
 import { IInitializedSlider } from '../sliders/init';
 import initFormControl from './formControl';
 
-const initStepForm = (sliders: IInitializedSlider[]) => {
+const initStepForm = (
+  sliders: IInitializedSlider[],
+  calendarDaysCount: number
+) => {
   const formArray =
     document.querySelectorAll<HTMLFormElement>('.quiz__form.form');
 
@@ -12,7 +15,7 @@ const initStepForm = (sliders: IInitializedSlider[]) => {
   formArray.forEach((form, index) => {
     sliders.forEach(({ name, slider }) => {
       if (name === `quiz-${index}` && slider) {
-        initFormControl(form, slider);
+        initFormControl(form, slider, sliders, calendarDaysCount);
       }
     });
   });

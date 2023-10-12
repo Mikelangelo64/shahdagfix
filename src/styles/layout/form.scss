@@ -100,17 +100,17 @@ textarea {
   resize: none;
   height: 144px;
 }
-// /* stylelint-disable */
-// input[type=number]::-webkit-outer-spin-button,
-// input[type=number]::-webkit-inner-spin-button {
-//     -webkit-appearance: none;
-//     margin: 0;
-// }
+/* stylelint-disable */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
-// input[type=number] {
-//     -moz-appearance:textfield;
-// }
-// /* stylelint-enable */
+input[type=number] {
+    -moz-appearance:textfield;
+}
+/* stylelint-enable */
 
 form {
   position: relative;

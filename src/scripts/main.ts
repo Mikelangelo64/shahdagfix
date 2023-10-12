@@ -13,7 +13,7 @@ export const init = () => {
   globAnimationHandler();
   fadeContentInit();
 
-  initStepForm(sliders);
+  initStepForm(sliders, 20);
 
   // const header = document.querySelector('.header') as HTMLElement;
   // // const headerHeight = header ? header.offsetHeight : 0;
@@ -63,13 +63,30 @@ export const init = () => {
                 const input = inputProp;
                 console.log(input, input.value);
 
+                // if (input.type === 'tel') {
+                //   return;
+                // }
+
                 input.value = '';
               });
             }
+
+            // if (inputMaskArray) {
+            //   inputMaskArray.forEach((inputMaskProp) => {
+            //     const inputMask = inputMaskProp;
+            //     inputMask.value = '';
+            //     inputMask.updateValue();
+            //   });
+            // }
           } else if (isError && hasError) {
             timeline?.play();
           } else {
             timeline?.reverse();
+
+            setTimeout(() => {
+              document.querySelector('html')?.classList.add('lock');
+              document.querySelector('body')?.classList.add('lock');
+            }, 300);
           }
         });
       });
@@ -78,11 +95,44 @@ export const init = () => {
     // document.addEventListener(
     //   'wpcf7mailsent',
     //   function () {
-    //     popups.forEach(({ timeline, isThanksPopup }) => {
-    //       if (isThanksPopup) {
-    //         timeline.play();
+    //     popups.forEach(({ timeline, isThanks, isError }) => {
+    //       if (isThanks && !hasError) {
+    //         timeline?.play();
+
+    //         formArr.forEach((form) => {
+    //           const inputs = Array.from(
+    //             form.querySelectorAll('input, textarea') as NodeListOf<
+    //               HTMLInputElement | HTMLTextAreaElement
+    //             >
+    //           );
+
+    //           if (inputs.length !== 0) {
+    //             inputs.forEach((inputProp) => {
+    //               const input = inputProp;
+    //               if (input.type === 'tel') {
+    //                 return;
+    //               }
+    //               input.value = '';
+    //             });
+    //           }
+
+    //           if (inputMaskArray) {
+    //             inputMaskArray.forEach((inputMaskProp) => {
+    //               const inputMask = inputMaskProp;
+    //               inputMask.value = '';
+    //               inputMask.updateValue();
+    //             });
+    //           }
+    //         });
+    //       } else if (isError && hasError) {
+    //         timeline?.play();
     //       } else {
-    //         timeline.reverse();
+    //         timeline?.reverse();
+
+    //         setTimeout(() => {
+    //           document.querySelector('html')?.classList.add('lock');
+    //           document.querySelector('body')?.classList.add('lock');
+    //         }, 300);
     //       }
     //     });
     //   },

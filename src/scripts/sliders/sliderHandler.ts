@@ -4,7 +4,8 @@ import {
   Thumbs,
   Pagination,
   EffectFade,
-  Autoplay
+  Autoplay,
+  Manipulation
 } from 'swiper/modules';
 import { PaginationOptions } from 'swiper/types/modules/pagination';
 import { SwiperOptions } from 'swiper/types/swiper-options';
@@ -58,7 +59,14 @@ const makeSlider = ({
   ) as HTMLElement | null;
 
   const sliderInit = new Swiper(slider, {
-    modules: [Navigation, Thumbs, Pagination, EffectFade, Autoplay],
+    modules: [
+      Navigation,
+      Thumbs,
+      Pagination,
+      EffectFade,
+      Autoplay,
+      Manipulation
+    ],
     thumbs: {
       swiper: thumb
     },
