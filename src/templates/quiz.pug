@@ -1,0 +1,148 @@
+-
+  const quizList = [
+    {
+      title: '',
+      isHasAdditional: 'true'
+    }
+  ];
+
+.section.quiz
+  form#form-quiz.form.hidden.quiz__form(action='post') 
+    input#quiz-zip.hidden(type='text', name='zip')
+
+    input#quiz-brand.hidden(type='text', name='brand')
+    input#quiz-day.hidden(type='text', name='day')
+    input#quiz-time.hidden(type='text', name='time')
+
+    input#quiz-details.hidden(type='text', name='details')
+
+    input#quiz-adress.hidden(type='text', name='adress')
+    input#quiz-adress-instruction.hidden(
+      type='text',
+      name='adress-instruction'
+    )
+
+    input#quiz-first-name.hidden(type='text', name='your-first-name')
+    input#quiz-last-name.hidden(type='text', name='your-last-name')
+    input#quiz-email.hidden(type='text', name='your-email')
+    input#quiz-telephone.hidden(type='tel', name='your-phone')
+
+    input#quiz-submit.hidden(type='submit')
+
+  ._container.quiz__container
+    .quiz__wrapper
+      .quiz-slider.swiper
+        .swiper-wrapper
+          .swiper-slide
+            .quiz__item
+              p.quiz__title Discover the top technician near you
+
+              .quiz__main
+                include @/templates/quiz-steps/step-1-zip.pug
+
+              .quiz__footer
+                .quiz-call
+                  p.quiz-call__title Questions? Call
+
+                  a.quiz-call__link(href='tel:+4917656953558') +49 176 56953558
+
+                a.quiz__link(href='#', tagret='_blank', rel='noreferrer') Terms and Conditions
+
+                .quiz-price
+                  p.quiz-price__value $69
+                  p.quiz-price__subtitle Service call
+
+          .swiper-slide
+            .quiz__item
+              p.quiz__title What is the brand of appliance?
+
+              .quiz__main
+                include @/templates/quiz-steps/step-2-brand.pug
+
+              .quiz__footer
+                .quiz-call
+                  p.quiz-call__title Questions? Call
+
+                  a.quiz-call__link(href='tel:+4917656953558') +49 176 56953558
+
+                a.quiz__link(href='#', tagret='_blank', rel='noreferrer') Terms and Conditions
+
+                .quiz-price
+                  p.quiz-price__value $69
+                  p.quiz-price__subtitle Service call
+
+          .swiper-slide
+            .quiz__item
+              p.quiz__title Pick arrival time that suits you
+
+              .quiz__main
+                include @/templates/quiz-steps/step-3-time.pug
+
+              .quiz__footer
+                .quiz-call
+                  p.quiz-call__title Questions? Call
+
+                  a.quiz-call__link(href='tel:+4917656953558') +49 176 56953558
+
+                a.quiz__link(href='#', tagret='_blank', rel='noreferrer') Terms and Conditions
+
+                .quiz-price
+                  p.quiz-price__value $69
+                  p.quiz-price__subtitle Service call
+
+          .swiper-slide
+            .quiz__item
+              p.quiz__title Where shall we send your technician?
+
+              .quiz__main
+                include @/templates/quiz-steps/step-4-details.pug
+
+              .quiz__footer
+                .quiz-call
+                  p.quiz-call__title Questions? Call
+
+                  a.quiz-call__link(href='tel:+4917656953558') +49 176 56953558
+
+                a.quiz__link(href='#', tagret='_blank', rel='noreferrer') Terms and Conditions
+
+                .quiz-price
+                  p.quiz-price__value $69
+                  p.quiz-price__subtitle Service call
+
+          .swiper-slide
+            .quiz__item
+              p.quiz__title Where shall we send your technician?
+
+              .quiz__main
+                include @/templates/quiz-steps/step-5-adress.pug
+
+              .quiz__footer
+                .quiz-call
+                  p.quiz-call__title Questions? Call
+
+                  a.quiz-call__link(href='tel:+4917656953558') +49 176 56953558
+
+                a.quiz__link(href='#', tagret='_blank', rel='noreferrer') Terms and Conditions
+
+                .quiz-price
+                  p.quiz-price__value $69
+                  p.quiz-price__subtitle Service call
+
+          .swiper-slide
+            .quiz__item
+              p.quiz__title Where can we send imprtant updates about your appointment?
+
+              .quiz__main
+                include @/templates/quiz-steps/step-6-info.pug
+
+              .quiz__footer
+                .quiz-call
+                  p.quiz-call__title Questions? Call
+
+                  a.quiz-call__link(href='tel:+4917656953558') +49 176 56953558
+
+                a.quiz__link(href='#', tagret='_blank', rel='noreferrer') Terms and Conditions
+
+                .quiz-price
+                  p.quiz-price__value $69
+                  p.quiz-price__subtitle Service call

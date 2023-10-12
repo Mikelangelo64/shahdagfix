@@ -1,0 +1,135 @@
+.quiz-time
+  .quiz-time__item
+    p.quiz-time__title Choose the right day
+
+    .quiz-time_content.quiz-calendar.input-container(data-input='day')
+      .quiz-calendar-slider-controls
+        button.quiz-calendar-slider-prev
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path  d="M16.7518 23.994L6.87885 14.121C6.31643 13.5584 6.00049 12.7955 6.00049 12C6.00049 11.2045 6.31643 10.4416 6.87885 9.87902L16.7458 0.0120239L18.1598 1.42602L8.29285 11.293C8.10538 11.4806 8.00006 11.7349 8.00006 12C8.00006 12.2652 8.10538 12.5195 8.29285 12.707L18.1658 22.58L16.7518 23.994Z" fill="currentColor" fill-opacity="0.62"/>
+          </svg>
+
+        button.quiz-calendar-slider-next
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.24815 23.994L17.1212 14.121C17.6836 13.5584 17.9995 12.7955 17.9995 12C17.9995 11.2045 17.6836 10.4416 17.1212 9.87902L7.25415 0.0120239L5.84015 1.42602L15.7072 11.293C15.8946 11.4806 15.9999 11.7349 15.9999 12C15.9999 12.2652 15.8946 12.5195 15.7072 12.707L5.83415 22.58L7.24815 23.994Z" fill="currentColor" fill-opacity="0.62"/>
+          </svg>
+
+      .quiz-calendar-slider.swiper
+        .swiper-wrapper
+          .swiper-slide
+            button.input-container__button.quiz-calendar-button.active(
+              data-value='Sep 25'
+            )
+              span.quiz-calendar-button__month Sep
+              span.quiz-calendar-button__day 25
+
+          .swiper-slide
+            button.input-container__button.quiz-calendar-button(
+              data-value='Sep 26'
+            )
+              span.quiz-calendar-button__month Sep
+              span.quiz-calendar-button__day 26
+
+          .swiper-slide
+            button.input-container__button.quiz-calendar-button(
+              data-value='Sep 27'
+            )
+              span.quiz-calendar-button__month Sep
+              span.quiz-calendar-button__day 27
+
+          .swiper-slide
+            button.input-container__button.quiz-calendar-button(
+              data-value='Sep 28'
+            )
+              span.quiz-calendar-button__month Sep
+              span.quiz-calendar-button__day 28
+
+          .swiper-slide
+            button.input-container__button.quiz-calendar-button(
+              data-value='Sep 29'
+            )
+              span.quiz-calendar-button__month Sep
+              span.quiz-calendar-button__day 29
+
+          .swiper-slide
+            button.input-container__button.quiz-calendar-button(
+              data-value='Sep 30'
+            )
+              span.quiz-calendar-button__month Sep
+              span.quiz-calendar-button__day 30
+
+          .swiper-slide
+            button.input-container__button.quiz-calendar-button(
+              data-value='Oct 1'
+            )
+              span.quiz-calendar-button__month Oct
+              span.quiz-calendar-button__day 1
+
+          .swiper-slide
+            button.input-container__button.quiz-calendar-button(
+              data-value='Oct 2'
+            )
+              span.quiz-calendar-button__month Oct
+              span.quiz-calendar-button__day 2
+
+  .quiz-time__item
+    p.quiz-time__title Choose the right time
+
+    .quiz-time_content
+      .quiz-time-period.input-container(data-input='time')
+        button.input-container__button.quiz-time-period__button.active(
+          data-value='9 am - 10 am'
+        )
+          span 9 am - 10 am
+
+        button.input-container__button.quiz-time-period__button(
+          data-value='10 am - 12 am'
+        )
+          span 10 am - 12 am
+
+        button.input-container__button.quiz-time-period__button(
+          data-value='11 am - 1 pm'
+        )
+          span 11 am - 1 pm
+
+        button.input-container__button.quiz-time-period__button(
+          data-value='12 am - 2 pm'
+        )
+          span 12 am - 2 pm
+
+        button.input-container__button.quiz-time-period__button(
+          data-value='1 pm - 3 pm'
+        )
+          span 1 pm - 3 pm
+
+        button.input-container__button.quiz-time-period__button(
+          data-value='2 pm - 4 pm'
+        )
+          span 2 pm - 4 pm
+
+        button.input-container__button.quiz-time-period__button(
+          data-value='3 pm - 5 pm'
+        )
+          span 3 pm - 5 pm
+
+        button.input-container__button.quiz-time-period__button(
+          data-value='4 pm - 6 pm'
+        )
+          span 4 pm - 6 pm
+
+        button.input-container__button.quiz-time-period__button(
+          data-value='5 pm - 7 pm'
+        )
+          span 5 pm - 7 pm
+
+        button.input-container__button.quiz-time-period__button(
+          data-value='6 pm - 8 pm'
+        )
+          span 6 pm - 8 pm
+
+  .quiz__controls
+    button.button-light.quiz-prev
+      span Back
+
+    button.button-light.quiz-next
+      span Continue

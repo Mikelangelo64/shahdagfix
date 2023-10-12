@@ -1,0 +1,17 @@
+doctype html
+html(lang='en')
+  head
+    include @/layout/head.pug
+
+    title Shahdagfix - form
+
+    link(rel='stylesheet', href=require('@/styles/pages/form-page.scss'))
+
+  body
+    include @/layout/header.pug
+
+    include @/templates/quiz.pug
+
+    include @/layout/footer.pug
+
+    script(src=require('../index.ts')) 

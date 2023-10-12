@@ -4,13 +4,16 @@ import globAnimationHandler from './globAnimationHandler/init';
 import initPopups from './popup/init';
 import scrollBarInit from './scrollbar';
 import slidersInit from './sliders/init';
+import initStepForm from './stepForm/init';
 
 export const init = () => {
   scrollBarInit();
-  slidersInit();
+  const sliders = slidersInit();
   footerLinesHelper();
   globAnimationHandler();
   fadeContentInit();
+
+  initStepForm(sliders);
 
   // const header = document.querySelector('.header') as HTMLElement;
   // // const headerHeight = header ? header.offsetHeight : 0;
@@ -58,6 +61,8 @@ export const init = () => {
             if (inputs.length !== 0) {
               inputs.forEach((inputProp) => {
                 const input = inputProp;
+                console.log(input, input.value);
+
                 input.value = '';
               });
             }

@@ -11,6 +11,37 @@ export interface IInitializedSlider {
   slider: Swiper | undefined;
 }
 
+const sliderQuizFormInit = (sliders: Array<IInitializedSlider>) => {
+  const containerArray = document.querySelectorAll(
+    '.quiz'
+  ) as NodeListOf<HTMLElement>;
+
+  if (containerArray.length === 0) {
+    return;
+  }
+
+  containerArray.forEach((item, sliderIndex) => {
+    const slider = makeSlider({
+      container: item,
+      className: 'quiz',
+      config: {
+        effect: 'fade',
+        allowTouchMove: false
+        // autoplay: {
+        //   delay: 6000,
+        //   disableOnInteraction: false
+        // }
+      }
+    });
+
+    if (!slider) {
+      return;
+    }
+
+    sliders.push({ name: `quiz-${sliderIndex}`, slider });
+  });
+};
+
 const sliderBrandsInit = (sliders: Array<IInitializedSlider>) => {
   const containerArray = document.querySelectorAll(
     '.brands'
@@ -99,11 +130,60 @@ const sliderFeedbackInit = (sliders: Array<IInitializedSlider>) => {
   });
 };
 
+const sliderCalendarInit = (sliders: Array<IInitializedSlider>) => {
+  const containerArray = document.querySelectorAll(
+    '.quiz-calendar'
+  ) as NodeListOf<HTMLElement>;
+
+  if (containerArray.length === 0) {
+    return;
+  }
+
+  containerArray.forEach((item, sliderIndex) => {
+    const slider = makeSlider({
+      container: item,
+      className: 'quiz-calendar',
+
+      config: {
+        allowTouchMove: true,
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        spaceBetween: 12,
+
+        breakpoints: {
+          350: {
+            slidesPerView: 3,
+            slidesPerGroup: 3
+          },
+          450: {
+            slidesPerView: 4,
+            slidesPerGroup: 4
+          },
+          899: {
+            slidesPerView: 7,
+            slidesPerGroup: 7
+          },
+          1199: {
+            slidesPerView: 7,
+            slidesPerGroup: 7
+          }
+        }
+      }
+    });
+
+    if (slider) {
+      sliders.push({ name: `calendar-${sliderIndex}`, slider });
+    }
+  });
+};
+
 const slidersInit = () => {
   const sliders: Array<IInitializedSlider> = [];
 
+  sliderQuizFormInit(sliders);
   sliderBrandsInit(sliders);
   sliderFeedbackInit(sliders);
+  sliderCalendarInit(sliders);
 
   return sliders;
 };

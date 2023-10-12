@@ -1,0 +1,30 @@
+.quiz-info
+  .quiz-info__wrapper
+    input#first-name.quiz-info__input.required(
+      type='text',
+      name='your-first-name',
+      placeholder='First name'
+    )
+
+    input#last-name.quiz-info__input.required(
+      type='text',
+      name='your-last-name',
+      placeholder='Last name'
+    )
+
+  .quiz-info__wrapper
+    input#your-email.quiz-info__input.required(
+      type='email',
+      name='your-email',
+      placeholder='Email'
+    )
+
+    input#your-phone.quiz-info__input.required(
+      type='tel',
+      name='your-phone',
+      placeholder='Phone'
+    )
+
+  .quiz__controls
+    label.button-light.quiz-submit.locked(for='quiz-submit')
+      span Request appointment
