@@ -1,11 +1,6 @@
 import makeSlider from './sliderHandler';
 import Swiper from 'swiper';
 
-export interface ITypesSlider {
-  item: HTMLElement;
-  slider: Swiper;
-}
-
 export interface IInitializedSlider {
   name: string;
   slider: Swiper | undefined;

@@ -75,9 +75,24 @@ const onSubmitHandler = (form: HTMLElement, slider: Swiper) => {
       inputStepArray.forEach((inputProp) => {
         const input = inputProp;
 
-        if (input.type !== 'radio') {
-          input.value = '';
+        input.value = '';
+      });
+
+      slider.slides.forEach((slide) => {
+        const isHasRequired =
+          slide.querySelectorAll<HTMLElement>('input.required').length !== 0;
+
+        const buttonArray = slide.querySelectorAll<HTMLElement>(
+          '.quiz-next, .quiz-submit'
+        );
+
+        if (!isHasRequired || buttonArray.length === 0) {
+          return;
         }
+
+        buttonArray.forEach((button) => {
+          button.classList.add('locked');
+        });
       });
     }, 400);
   });
