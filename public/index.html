@@ -459,14 +459,35 @@
           </div>
         </div>
       </div>
-      <div class="popup popup-common about__popup " data-popupname="_popup-about" aria-modal="true" role="dialog">
+      <div class="popup popup-common info__popup " data-popupname="_popup-info" aria-modal="true" role="dialog">
         <div class="popup__overlay"></div>
         <div class="popup__additional"></div>
         <div class="popup__scroll">
           <div class="popup__wrapper"><button class="popup__close"><img src="assets/img/popup-close.svg"
                 alt="close"></button>
             <div class="popup__content">
-              <p>default popup</p>
+              <div class="popup-info typography">
+                <h1>title 1</h1>
+                <h2>title 2</h2>
+                <h3>title 3</h3>
+                <h4>title 4</h4>
+                <h5>title 5</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, recusandae!</p>
+                <p><a href="#">link</a><strong>strong</strong><i>i text</i><ins>ins text</ins>
+                <blockquote>blockquote</blockquote>
+                </p>
+                <figure><img src="assets/img/service-about.jpg" alt="typography"></figure>
+                <ul>
+                  <li>list</li>
+                  <li>list</li>
+                  <li>list</li>
+                </ul>
+                <ol>
+                  <li>list</li>
+                  <li>list</li>
+                  <li>list</li>
+                </ol>
+              </div>
             </div>
           </div>
         </div>
@@ -885,10 +906,10 @@
                     <ul class="footer-navigation__col">
                       <li class="footer-navigation__row"><a class="footer-navigation__item anchor" href="#"
                           data-goto=".footer">Contacts</a></li>
-                      <li class="footer-navigation__row"><a class="footer-navigation__item" href="#"
-                          data-goto="false">Privacy Policy</a></li>
-                      <li class="footer-navigation__row"><a class="footer-navigation__item" href="#"
-                          data-goto="false">Terms and Conditions</a></li>
+                      <li class="footer-navigation__row"><button class="footer-navigation__item popup-open"
+                          data-popup="_popup-info">Privacy Policy</button></li>
+                      <li class="footer-navigation__row"><button class="footer-navigation__item popup-open"
+                          data-popup="_popup-info">Terms and Conditions</button></li>
                     </ul>
                   </li>
                 </ul>

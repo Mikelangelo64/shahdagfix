@@ -5,6 +5,7 @@ import onSubmitHandler from './onSubmitHandler';
 import buttonInputHandler from './buttonInput';
 import calendarInit from './calendar/init';
 import { IInitializedSlider } from '../sliders/init';
+import buttonLockHandler from './buttonLockHandler';
 
 const initFormControl = (
   form: HTMLElement,
@@ -15,6 +16,7 @@ const initFormControl = (
   initButtonsNextPrev(slider);
 
   slider.slides.forEach((slide) => {
+    buttonLockHandler(slide);
     inputRequieredHandler(slide);
   });
 

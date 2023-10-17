@@ -53,6 +53,7 @@
     }
 
     @include viewport-phone {
+      margin: px-to-rem(46) auto;
       border-radius: px-to-rem(24);
     }
     
